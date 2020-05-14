@@ -62,6 +62,13 @@ func main() {
 	} else{
 		fmt.Println(sqrtResult)
 	}
+
+	p := person{name: "Jake", age: 23}
+	fmt.Println(p.name, p.age)
+
+	refTest := 7
+	inc(&refTest)
+	fmt.Println(refTest)
 }
 
 func mySumFunc (x int, y int) int {
@@ -74,4 +81,13 @@ func sqrt (x float64) (float64, error) {
 	}
 
 	return math.Sqrt(x), nil
+}
+
+type person struct {
+	name string
+	age int
+}
+
+func inc(x *int) {
+	*x++
 }
